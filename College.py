@@ -89,8 +89,9 @@ if selected == 'Background Information':
 
 if selected == 'Data Cleaning':
     st.title('Data Cleaning')
-    st.markdown('For this case study, the dataset is already synthesized data that doesn\' require much cleaning.')
+    st.markdown('For this case study, the dataset is already synthesized data that doesn\'t require much cleaning.')
     st.write(original)
+    st.caption('https://www.kaggle.com/datasets/saddamazyazy/go-to-college-dataset')
     st.subheader('Introduction to each variable:')
     st.markdown('Type School - what type of school the student attends (Vocational/Academic)')
     st.markdown('School Accreditation - school accreditation of school the student went to (A/B)')
