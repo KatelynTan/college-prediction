@@ -308,7 +308,8 @@ if selected == 'Data Analysis':
     chi2 = pd.DataFrame(columns = ['Variable','chi squared','p value'])
     for column in catv:
         table = pd.crosstab(original[column],original['in_college'])
-        chi2 = chi2.append({'Variable':column,'chi squared':stats.chi2_contingency(table)[0],'p value':stats.chi2_contingency(table)[1]},ignore_index=True)
+        row = pd.DataFrame({'Variable':[column],'chi squared':[stats.chi2_contingency(table)[0]],'p value':[stats.chi2_contingency(table)[1]]})
+        chi2 = pd.concat([chi2,row])
     chi2['Variable'] = chi2['Variable'].replace(catv_dict)
     col16.dataframe(chi2.sort_values('p value').reset_index(drop = True))
     col15.markdown('')
